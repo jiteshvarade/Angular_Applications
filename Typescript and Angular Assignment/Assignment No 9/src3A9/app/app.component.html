@@ -1,0 +1,25 @@
+<div>
+  <label>Enter number : <input type="number" [(ngModel)]="No" ></label>
+</div>
+
+
+<h2> Select one of the options : </h2>
+<div>
+  <label> <input id="prime" type="radio" name="group1" value="prime" (click)="prime()"> Prime</label>
+</div>
+
+<div>
+  <label> <input id="perfect" type="radio" name="group1" value="perfect" (click)="perfect()"> Perfect</label>
+</div>
+
+<div>
+  <label> <input id="even" type="radio" name="group1" value="even" (click)="even()"> Even</label>
+</div>
+
+<div>
+  <label> <input id="odd" type="radio" name="group1" value="odd" (click)="odd()"> Odd</label>
+</div>
+
+<h1> Number is {{ ResultStr | marvellousChk : No : Str}}</h1>
+
+<router-outlet> </router-outlet>
