@@ -1,0 +1,17 @@
+<div *ngIf = "Result; then ifblock; else elseblock" ></div>
+
+<div>
+    <ng-template #ifblock >
+        <h1>Number is prime</h1>
+    </ng-template>
+</div>
+
+<div>
+    <ng-template #elseblock > 
+        <h1> Number is not prime</h1>
+    </ng-template>
+</div>
+
+<div>
+    <h1>Number of capital letters in {{Str}} are : {{Count}}</h1>
+</div>
