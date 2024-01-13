@@ -1,0 +1,28 @@
+<div class="bug-container">
+    <h6> Date and time your first noticed this bug</h6>
+    <div class="date">
+        <input type="number" id="dateelements" placeholder="DD" min="1" max="31" (ngModelChange)="DD($event)">
+        <input type="number" id="dateelements" placeholder="MM" min="1" max="12" (ngModelChange)="MM($event)">
+        <input type="number" id="dateelements" placeholder="YYYY" min="2000" max="2100" (ngModelChange)="YYYY($event)">
+        <img src="assets\calender.svg" alt="calendar">
+    </div>
+    <div class="time">
+        <input type="number" id="dateelements" placeholder="Hour" min="0" max="23" (ngModelChange)="Hour($event)">
+        <input type="number" id="dateelements" placeholder="Min" min="0" max="59" (ngModelChange)="Min($event)">
+        <input type="number" id="dateelements" placeholder="Sec" min="0" max="59" (ngModelChange)="Sec($event)">
+    </div>
+
+    <div class="impact">
+        <label id="impactlabel" for="impactinput"> Impact</label>
+        <select id="userInput" (ngModelChange)="option($event)">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select>
+    </div>
+
+    <div class="bug-explanation">
+        <label for="bugbox">Detailed explanation of bug*</label>
+        <textarea id="bugbox" type="text" (ngModelChange)="bugInfo($event)"></textarea>
+    </div>
+</div>

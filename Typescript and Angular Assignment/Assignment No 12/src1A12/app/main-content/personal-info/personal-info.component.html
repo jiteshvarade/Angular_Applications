@@ -1,0 +1,18 @@
+<div class="personalinfo">
+    <h4>Your name*</h4>
+
+    <div class="form-container">
+        <div class="form-group">
+            <input type="text" id="input1" name="input1" (ngModelChange)="FirstName($event)">
+            <label for="input1">First name</label>
+        </div>
+        
+        <div class="form-group">
+            <input type="text" id="input2" name="input2" (ngModelChange)="LastName($event)">
+            <label for="input2"> Last name</label>
+        </div>
+    </div>
+    <div class="email">
+        <label> Email* <input type="text" id="input3" (ngModelChange)="Email($event)"> </label>
+    </div>
+</div>
