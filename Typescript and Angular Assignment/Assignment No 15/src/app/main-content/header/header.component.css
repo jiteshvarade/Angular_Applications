@@ -1,0 +1,19 @@
+.header {
+    padding: 2%;
+}
+
+.header .A {
+    display: inline-block;
+    width: 50%;
+}
+
+.header .B {
+    text-align: left;
+    display: inline-block;
+    width: 50%;
+}
+
+.B img {
+    width: 20%;
+}
+

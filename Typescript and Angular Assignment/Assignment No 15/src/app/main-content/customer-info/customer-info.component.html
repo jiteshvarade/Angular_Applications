@@ -1,0 +1,80 @@
+<form [formGroup] = "Info">
+
+    <div class="form-group" >
+        <label for="firstname">Name<font color="red">*</font> </label><br>
+        <section id="A">
+            <input [class.is-invalid]="Info.get('firstname')?.invalid && Info.get('firstname')?.touched" id="firstname" type="text" class="form-control" formControlName="firstname">
+            <label for="firstname">First name</label>
+            <!-- <small [class.d-none]="Info.get('firstname')?.valid || Info.get('firstname')?.untouched" class="text-danger" > is required </small> -->
+            <div class="text-danger" *ngIf="Info.get('firstname')?.errors?.['required'] && Info.get('firstname')?.touched">
+                is required
+            </div>
+            <div class="text-danger" *ngIf="Info.get('firstname')?.errors?.['pattern']" >
+                First name should only contain english alphabets
+            </div>
+        </section>
+        <section id="B">
+            <input [class.is-invalid]="Info.get('lastname')?.invalid && Info.get('lastname')?.touched" id="lastname" type="text" class="form-control" formControlName="lastname" >
+            <label for="lastname">Last name</label>
+            <small [class.d-none]="Info.get('lastname')?.valid || Info.get('lastname')?.untouched" class="text-danger" > is required</small>
+        </section>
+    </div>
+
+    <div class="form-group" >
+        <label for="email">Email<font color="red">*</font> </label><br>
+        <input id="email" type="text" class="form-control" formControlName="email" >
+    </div>
+
+    <div class="form-group" >
+        <label for="phone">Phone<font color="red">*</font> </label><br>
+        <input [class.is-invalid]="Info.get('phone')?.invalid && Info.get('phone')?.touched" id="phone" type="text" class="form-control" formControlName="phone"  >
+        <div class="text-danger" *ngIf="Info.get('phone')?.errors?.['required'] && Info.get('phone')?.touched" >
+            is required
+        </div>
+        <div class="text-danger" *ngIf="Info.get('phone')?.errors?.['pattern'] || Info.get('phone')?.errors?.['minLength'] || Info.get('phone')?.errors?.['maxLength']" >
+            Phone number should contain only 10 numbers
+        </div>
+    </div>
+
+    <div class="form-group" >
+        <br>
+        <h4>Address : </h4>
+        <label for="city">City<font color="red">*</font> </label><br>
+        <input [class.is-invalid]="Info.get('city')?.invalid && Info.get('city')?.touched" id="city" type="text" class="form-control" formControlName="city" >
+        <div *ngIf="Info.get('city')?.errors?.['required'] && Info.get('city')?.touched" class="text-danger" >
+            is required
+        </div>
+        <div *ngIf="Info.get('city')?.errors?.['minLength'] && Info.get('city')?.touched" class="text-danger">
+            Should contain minimum 4 letters
+        </div>
+    </div>
+
+    <div class="form-group" >
+        <label for="state">State<font color="red">*</font> </label><br>
+        <select id="state" type="text" class="form-control" formControlName="state" >
+            <option value="Maharastra">Maharastra</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+        </select>
+        </div>
+
+    <div class="form-group" >
+        <label for="zipcode">Zipcode<font color="red">*</font> </label><br>
+        <input [class.is-invalid]="Info.get('zipcode')?.invalid && Info.get('zipcode')?.touched" id="zipcode" type="text" class="form-control" formControlName="zipcode" >
+        <div class="text-danger" *ngIf="Info.get('zipcode')?.errors?.['required'] && Info.get('zipcode')?.touched" >
+            is required
+        </div>
+        <div class="text-danger" *ngIf="Info.get('zipcode')?.errors?.['pattern'] || Info.get('zipcode')?.errors?.['minLength'] || Info.get('zipcode')?.errors?.['maxLength']" >
+            Zip code should contain only 10 numbers
+        </div>
+    </div>
+
+    <div class="form-group" >
+        <label for="comment">Comment<font color="red">*</font> </label><br>
+        <textarea [class.is-invalid]="Info.get('comment')?.invalid && Info.get('comment')?.touched" id="comment" type="text" class="form-control" formControlName="comment" ></textarea>
+        <div *ngIf="Info.get('comment')?.errors?.['minLength'] && Info.get('comment')?.touched" class="text-danger">
+            Should contain minimum 30 characters
+        </div>
+    </div>
+
+</form>
